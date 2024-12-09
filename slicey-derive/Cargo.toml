@@ -1,13 +1,13 @@
 [package]
 name = "slicey-derive"
 description = "Contains procedural macros for the parsey crate."
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Sol Wolf<wolfendenbuild@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/swolfenden9/slicey"
 documentation = "https://docs.rs/slicey/latest/slicey"
-readme = "../README.md"
+readme = "README.md"
 keywords = ["slice", "span"]
 
 [lib]
