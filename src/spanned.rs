@@ -131,7 +131,7 @@ where
     <Spanned<T> as Deref>::Target: AsRef<T>,
 {
     fn as_ref(&self) -> &T {
-        self.deref().as_ref()
+        self.deref()
     }
 }
 
@@ -140,7 +140,7 @@ where
     <Spanned<T> as Deref>::Target: AsMut<T>,
 {
     fn as_mut(&mut self) -> &mut T {
-        self.deref_mut().as_mut()
+        self.deref_mut()
     }
 }
 

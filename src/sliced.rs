@@ -120,7 +120,7 @@ impl<'source, T> Sliced<'source, &mut T> {
     }
 }
 
-impl<'source, T> Clone for Sliced<'source, T>
+impl<T> Clone for Sliced<'_, T>
 where
     T: Clone,
 {
@@ -133,7 +133,7 @@ where
     }
 }
 
-impl<'source, T> Deref for Sliced<'source, T> {
+impl<T> Deref for Sliced<'_, T> {
     type Target = T;
 
     fn deref(&self) -> &Self::Target {
@@ -141,7 +141,7 @@ impl<'source, T> Deref for Sliced<'source, T> {
     }
 }
 
-impl<'source, T> DerefMut for Sliced<'source, T> {
+impl<T> DerefMut for Sliced<'_, T> {
     fn deref_mut(&mut self) -> &mut Self::Target {
         &mut self.inner
     }
@@ -152,7 +152,7 @@ where
     <Sliced<'source, T> as Deref>::Target: AsRef<T>,
 {
     fn as_ref(&self) -> &T {
-        self.deref().as_ref()
+        self.deref()
     }
 }
 
@@ -161,7 +161,7 @@ where
     <Sliced<'source, T> as Deref>::Target: AsMut<T>,
 {
     fn as_mut(&mut self) -> &mut T {
-        self.deref_mut().as_mut()
+        self.deref_mut()
     }
 }
 
@@ -185,7 +185,7 @@ impl<'a, 'source, T> From<&'a mut Sliced<'source, T>> for Sliced<'source, &'a mu
     }
 }
 
-impl<'source, T: PartialEq> PartialEq for Sliced<'source, T> {
+impl<T: PartialEq> PartialEq for Sliced<'_, T> {
     fn eq(&self, other: &Self) -> bool {
         self.inner == other.inner && self.span == other.span && self.source == other.source
     }
