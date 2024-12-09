@@ -1,5 +1,5 @@
 [package]
-name = "slicey"
+name = "slicey-derive"
 description = "Ways to associate data with parts of a string."
 version = "0.1.0"
 authors = ["Sol Wolf<wolfendenbuild@gmail.com>"]

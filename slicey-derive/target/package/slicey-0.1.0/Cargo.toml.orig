@@ -1,0 +1,19 @@
+[package]
+name = "slicey"
+description = "Ways to associate data with parts of a string."
+version = "0.1.0"
+authors = ["Sol Wolf<wolfendenbuild@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/swolfenden9/slicey"
+documentation = "https://docs.rs/slicey/latest/slicey"
+readme = "../README.md"
+keywords = ["slice", "span"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.92"
+quote = "1.0.37"
+syn = { version = "2.0.90", features = ["full"] }
