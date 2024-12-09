@@ -1,4 +1,7 @@
-use std::ops::{Deref, DerefMut};
+use std::{
+    fmt::Display,
+    ops::{Deref, DerefMut},
+};
 
 use crate::Span;
 
@@ -188,5 +191,11 @@ impl<'a, 'source, T> From<&'a mut Sliced<'source, T>> for Sliced<'source, &'a mu
 impl<T: PartialEq> PartialEq for Sliced<'_, T> {
     fn eq(&self, other: &Self) -> bool {
         self.inner == other.inner && self.span == other.span && self.source == other.source
+    }
+}
+
+impl<T: Display> Display for Sliced<'_, T> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}(\"{}\")", self.inner, self.slice())
     }
 }

@@ -1,4 +1,7 @@
-use std::ops::{Deref, DerefMut};
+use std::{
+    fmt::Display,
+    ops::{Deref, DerefMut},
+};
 
 use crate::Span;
 
@@ -165,5 +168,11 @@ impl<'a, T> From<&'a mut Spanned<T>> for Spanned<&'a mut T> {
 impl<T: PartialEq> PartialEq for Spanned<T> {
     fn eq(&self, other: &Self) -> bool {
         self.inner == other.inner && self.span == other.span
+    }
+}
+
+impl<T: Display> Display for Spanned<T> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}(\"{:?}\")", self.inner, self.span)
     }
 }
