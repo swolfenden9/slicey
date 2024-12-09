@@ -42,7 +42,7 @@ impl<'source, T> Sliced<'source, T> {
 }
 
 impl<'source, T, E> Sliced<'source, Result<T, E>> {
-    /// Unzips an `Sliced<Result<T, E>>` into a `Result<Sliced<T>, Spanned<E>>`.
+    /// Unzips an `Sliced<Result<T, E>>` into a `Result<Sliced<T>, Sliced<E>>`.
     ///
     /// If `inner` is of the `Ok` variant this method returns `Ok(Sliced { inner: t, .. }`.
     /// Otherwise, `Err(Sliced { inner: e, .. }` is returned. Where `t` and `e` represent
