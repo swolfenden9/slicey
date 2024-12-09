@@ -11,4 +11,4 @@ readme = "README.md"
 keywords = ["slice", "span"]
 
 [dependencies]
-slicey-derive = { version = "0.1.0", path = "slicey-derive" }
+slicey-derive = { version = "0.1", path = "slicey-derive" }
