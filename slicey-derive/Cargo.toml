@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/swolfenden9/slicey"
 documentation = "https://docs.rs/slicey/latest/slicey"
 readme = "README.md"
-keywords = ["slice", "span"]
+keywords = ["slice", "span", "derive"]
 
 [lib]
 proc-macro = true
