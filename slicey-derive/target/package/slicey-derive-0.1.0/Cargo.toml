@@ -13,13 +13,22 @@
 edition = "2021"
 name = "slicey-derive"
 version = "0.1.0"
+authors = ["Sol Wolf<wolfendenbuild@gmail.com>"]
 build = false
 autolib = false
 autobins = false
 autoexamples = false
 autotests = false
 autobenches = false
-readme = false
+description = "Ways to associate data with parts of a string."
+documentation = "https://docs.rs/slicey/latest/slicey"
+readme = "README.md"
+keywords = [
+    "slice",
+    "span",
+]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/swolfenden9/slicey"
 
 [lib]
 name = "slicey_derive"
