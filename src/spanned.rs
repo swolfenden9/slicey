@@ -22,6 +22,11 @@ impl<T> Spanned<T> {
         Self { inner, span }
     }
 
+    /// Consume `self` and return the inner, wrapped value
+    pub fn unwrap(self) -> T {
+        self.inner
+    }
+
     /// The span associated with the wrapped value.
     pub fn span(&self) -> Span {
         self.span.clone()
