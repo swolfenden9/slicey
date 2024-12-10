@@ -1,7 +1,7 @@
 [package]
 name = "slicey-derive"
-description = "Contains procedural macros for the parsey crate."
-version = "0.1.2"
+description = "Contains procedural macros for the slicey crate."
+version = "0.1.3"
 authors = ["Sol Wolf<wolfendenbuild@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
