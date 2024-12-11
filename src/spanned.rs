@@ -8,7 +8,7 @@ use crate::Span;
 /// A value of type `T` associated with a span in the source text.
 #[derive(Debug)]
 pub struct Spanned<T> {
-    inner: T,
+    pub inner: T,
     span: Span,
 }
 

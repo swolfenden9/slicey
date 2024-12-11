@@ -8,7 +8,7 @@ use crate::Span;
 /// A value of type `T` associated with a slice of the source text.
 #[derive(Debug)]
 pub struct Sliced<'source, T> {
-    inner: T,
+    pub inner: T,
     span: Span,
     source: &'source str,
 }
